@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="@Mapper 클래스 경로">
+<!--  namespace : interface repository 클래스에 @Mapper 어노테이션을 통해 매핑된 파일  -->
+<!--  @Mapper("ooo~mapper") : '~~/~~/ooo~mapper' 와 같이 이름 지정 가능  -->
+
+    <select id="selectAll : 메서드 명" parameterType="Entity 경로" resultType="egovMap">
+<!--  id : List<Map<String, Object>> selectAll();  -->
+<!--  parameterType : java 이하 entity 경로 기재
+        mapper-config.xml - 파일에서 경로를 지정 한다
+        ^ 의 경로 : resources > 프로젝트명 > config 패키지에 위치  -->
+    </select>
+
+    <insert id="" parameterType="">
+    </insert>
+</mapper>
