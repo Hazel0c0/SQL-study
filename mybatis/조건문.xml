@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="">
+<select id="selectUsers" resultType="User">
+    SELECT * FROM USERS
+    <where>
+#         test에 변수명 그대로 사용!
+        <if test="username != null">
+            USERNAME = #{username}
+        </if>
+        <if test="age != null">
+            AND AGE >= #{age}
+        </if>
+        <if test="tall != null">
+            # Mybatis에서 '<'와 같은 특수 기호를 인식 하지 못할 때 => <![CDATA[<=]]> 으로 사용
+            AND TALL <![CDATA[<=]]> #{tall}
+        </if>
+    </where>
+</select>
+
+</mapper>
