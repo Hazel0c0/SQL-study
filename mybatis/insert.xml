@@ -31,6 +31,5 @@
                TRUNC(CAST(SYSDATE AS TIMESTAMP) AT TIME ZONE 'Asia/Seoul'),
                TO_CHAR(CAST(SYSDATE AS TIMESTAMP) AT TIME ZONE 'Asia/Seoul', 'HH24:MI'),
         FROM DUAL CONNECT BY LEVEL <![CDATA[<=]]> TO_DATE(#{end}, 'YYYY-MM-DD') - TO_DATE(#{start}, 'YYYY-MM-DD') + 1
-        # Mybatis에서 '<'와 같은 특수 기호를 인식 하지 못할 때 => <![CDATA[<=]]> 으로 사용
     </insert>
 </mapper>
